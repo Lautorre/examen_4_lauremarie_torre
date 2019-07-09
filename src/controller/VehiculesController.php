@@ -40,16 +40,24 @@ class VehiculesController {
     public function update($id){
 
         $vehicule= Vehicule::findOne($id);
-        $vehicule= setNom($_POST['nom']);
-        $vehicule= setMail($_POST['mail']);
+
+        $vehicule= setId($_POST['id']);
+        $vehicule= setMarque($_POST['marque']);
+        $vehicule= setModele($_POST['modele']);
+        $vehicule= setCouleur($_POST['couleur']);
+        $vehicule= setImmatriculation($_POST['immatriculation']);
+        
         $vehicule->update();
 
         Header ('Location: '.url('liste-vehicule/' . $vehicule->GetId()));
     }
 
     public function delete($id) {
-        $vehicule= Vehicule::findOne($id);
-        $vehicule= setNom($_POST['nom']);
+        $vehicule= setId($_POST['id']);
+        $vehicule= setMarque($_POST['marque']);
+        $vehicule= setModele($_POST['modele']);
+        $vehicule= setCouleur($_POST['couleur']);
+        $vehicule= setImmatriculation($_POST['immatriculation']);
 
         $vehicule->delete();
 
@@ -61,8 +69,10 @@ class VehiculesController {
         $vehicule= Vehicule::findOne($id);
 
         $vehicule= setId($_POST['id']);
-        $vehicule= setPrenom($_POST['prenom']);
-        $vehicule= setNom($_POST['nom']);
+        $vehicule= setMarque($_POST['marque']);
+        $vehicule= setModele($_POST['modele']);
+        $vehicule= setCouleur($_POST['couleur']);
+        $vehicule= setImmatriculation($_POST['immatriculation']);
 
         $vehicule->show();
 
