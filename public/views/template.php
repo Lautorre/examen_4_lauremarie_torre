@@ -11,17 +11,26 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary text-center">
+      <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="<?= url('liste-conducteurs') ?>">Conducteurs</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="<?= url('liste-vehicules')?>">Vehicules</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= url('liste-associations') ?>">Associations</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="<?= url('liste-associations') ?>">Locations</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="<?= url('ajout-conducteur') ?>">Ajouter un Conducteur</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="<?= url('ajout-vehicule')?>">Ajouter un Vehicule</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="<?= url('ajout-association') ?>">Ajouter une location</a>
           </li>
         </ul>
       </div>
