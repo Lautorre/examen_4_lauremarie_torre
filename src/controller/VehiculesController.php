@@ -33,8 +33,7 @@ class VehiculesController {
 
     public function edit($id) {
         $vehicule= Vehicule::findOne($id);
-
-        view ('vehicules.edit', compact('vehicules'));
+        view ('vehicules.edit', compact('vehicule'));
     }
 
     public function update($id){
@@ -53,32 +52,9 @@ class VehiculesController {
     }
 
     public function delete($id) {
-        $vehicule= setId($_POST['id']);
-        $vehicule= setMarque($_POST['marque']);
-        $vehicule= setModele($_POST['modele']);
-        $vehicule= setCouleur($_POST['couleur']);
-        $vehicule= setImmatriculation($_POST['immatriculation']);
-
+        $vehicule = Vehicule::findOne($id);
         $vehicule->delete();
 
-        Header ('Location: '.url('liste-vehicule'));
-
+        Header('Location: ' . url('liste-vehicules'));
     }
-
-    public function show($id) {
-        $vehicule= Vehicule::findOne($id);
-
-        $vehicule= setId($_POST['id']);
-        $vehicule= setMarque($_POST['marque']);
-        $vehicule= setModele($_POST['modele']);
-        $vehicule= setCouleur($_POST['couleur']);
-        $vehicule= setImmatriculation($_POST['immatriculation']);
-
-        $vehicule->show();
-
-        Header ('Location: '.url('liste-vehicule/' . $vehicule->GetId()));
-        view ('vehicules.show');
-
-    }
-
 }

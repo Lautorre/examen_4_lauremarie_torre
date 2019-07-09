@@ -88,12 +88,12 @@ class Vehicule extends Db {
         if (count($element) > 0) $element = $element[0];
         else return;
 
-        $vehicule = new Bibliotheque;
-        $vehicule->setId($_POST['id']);
-        $vehicule->setMarque($_POST['marque']);
-        $vehicule->setModele($_POST['modele']);
-        $vehicule->setCouleur($_POST['couleur']);
-        $vehicule->setImmatriculation($_POST['immatriculation']);
+        $vehicule = new Vehicule;
+        $vehicule->setId($element['id']);
+        $vehicule->setMarque($element['marque']);
+        $vehicule->setModele($element['modele']);
+        $vehicule->setCouleur($element['couleur']);
+        $vehicule->setImmatriculation($element['immatriculation']);
 
         return $vehicule;
     }

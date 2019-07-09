@@ -64,10 +64,10 @@ class Conducteur extends Db {
         if (count($element) > 0) $element = $element[0];
         else return;
 
-        $conducteur = new Bibliotheque;
-        $conducteur->setId($_POST['id']);
-        $conducteur->setPrenom($_POST['prenom']);
-        $conducteur->setNom($_POST['nom']);
+        $conducteur = new Conducteur;
+        $conducteur->setId($element['id']);
+        $conducteur->setPrenom($element['prenom']);
+        $conducteur->setNom($element['nom']);
 
         return $conducteur;
     }

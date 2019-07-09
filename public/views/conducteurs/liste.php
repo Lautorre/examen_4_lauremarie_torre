@@ -16,8 +16,8 @@
             <td scope="row"><?= $c['id']?></td>
             <td><?= $c['prenom']?></td>
             <td><?= $c['nom']?></td>
-            <td><a href="url('liste-conducteurs/<?= $c['id'] ?>/edit')" class="btn btn-primary">Modifier</a></td>
-            <td><a href="url('liste-conducteurs/'. <?= $c['id'] ?>. '/delete')" class="btn btn-danger">Supprimer</a></td>
+            <td><a href="<?= 'liste-conducteurs/'.$c['id'] .'/edit'?>" class="btn btn-primary">Modifier</a></td>
+            <td><a href="<?= 'liste-conducteurs/'. $c['id'] . '/delete'?>" class="btn btn-danger">Supprimer</a></td>
         </tr>
         <?php endforeach; ?>
     </tbody>

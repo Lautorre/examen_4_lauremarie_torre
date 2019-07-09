@@ -32,7 +32,7 @@ class ConducteursController {
     public function edit($id) {
         $conducteur= Conducteur::findOne($id);
 
-        view ('conducteurs.edit', compact('conducteurs'));
+        view ('conducteurs.edit', compact('conducteur'));
     }
 
     public function update($id){
@@ -46,29 +46,11 @@ class ConducteursController {
     }
 
     public function delete($id) {
-        $conducteur= Conducteur::findOne($id);
-        $conducteur= setId($_POST['Id']);
-        $conducteur= setPrenom($_POST['prenom']);
-        $conducteur= setNom($_POST['nom']);
-
+        $conducteur = Conducteur::findOne($id);
         $conducteur->delete();
 
-        Header ('Location: '.url('liste-conducteur'));
-
-    }
-
-    public function show($id) {
-        $conducteur= Conducteur::findOne($id);
-
-        $conducteur= setId($_POST['id']);
-        $conducteur= setPrenom($_POST['prenom']);
-        $conducteur= setNom($_POST['nom']);
-
-        $conducteur->show();
-
-        Header ('Location: '.url('liste-conducteur/' . $conducteur->GetId()));
-        view ('conducteurs.show');
-
+        Header('Location: ' . url('liste-conducteurs'));
     }
 
 }
+

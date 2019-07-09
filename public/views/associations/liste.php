@@ -13,11 +13,11 @@
     <tbody>
         <?php foreach ($associations as $a) : ?>
         <tr>
-            <td scope="row"><?= $c['id']?></td>
+            <td scope="row"><?= $a['id']?></td>
             <td><?= $a['id_vehicule']?></td>
             <td><?= $a['id_conducteur']?></td>
-            <td><a href="url('liste-associations/<?= $a['id'] ?>/edit')" class="btn btn-primary">Modifier</a></td>
-            <td><a href="url('liste-associations/'. <?= $a['id'] ?>. '/delete')" class="btn btn-danger">Supprimer</a></td>
+            <td><a href="<?= 'liste-associations/'.$a['id'] .'/edit'?>" class="btn btn-primary">Modifier</a></td>
+            <td><a href="<?= 'liste-associations/'. $a['id'] . '/delete'?>" class="btn btn-danger">Supprimer</a></td>
         </tr>
         <?php endforeach; ?>
     </tbody>

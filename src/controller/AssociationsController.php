@@ -32,7 +32,7 @@ class AssociationsController {
     public function edit($id) {
         $association= Association::findOne($id);
 
-        view ('associations.edit', compact('associations'));
+        view ('associations.edit', compact('association'));
     }
 
     public function update($id){
@@ -45,30 +45,13 @@ class AssociationsController {
         Header ('Location: '.url('liste-association/' . $association->GetId()));
     }
 
-    public function delete($id) {
-        $association= Association::findOne($id);
-        $association= setId($_POST['Id']);
-        $association= setIdVehicule($_POST['id_vehicule']);
-        $association= setIdConducteur($_POST['id_conducteur']);
 
+    public function delete($id) {
+        $association = Association::findOne($id);
         $association->delete();
 
-        Header ('Location: '.url('liste-association'));
-
+        Header('Location: ' . url('liste-associations'));
     }
-
-    public function show($id) {
-        $association= Association::findOne($id);
-
-        $association= setId($_POST['id']);
-        $association= setIdVehicule($_POST['id_vehicule']);
-        $association= setIdConducteur($_POST['id_conducteur']);
-
-        $association->show();
-
-        Header ('Location: '.url('liste-association/' . $association->GetId()));
-        view ('associations.show');
-
-    }
-
 }
+
+

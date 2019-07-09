@@ -20,8 +20,8 @@
             <td><?= $v['modele']?></td>
             <td><?= $v['couleur']?></td>
             <td><?= $v['immatriculation']?></td>
-            <td><a href="url('liste-conducteurs/<?= $v['id'] ?>/edit')" class="btn btn-primary">Modifier</a></td>
-            <td><a href="url('liste-conducteurs/'. <?= $v['id'] ?>. '/delete')" class="btn btn-danger">Supprimer</a></td>
+            <td><a href="<?= 'liste-vehicules/'.$v['id'] .'/edit'?>" class="btn btn-primary">Modifier</a></td>
+            <td><a href="<?= 'liste-vehicules/'. $v['id'] . '/delete'?>" class="btn btn-danger">Supprimer</a></td>
         </tr>
         <?php endforeach; ?>
     </tbody>

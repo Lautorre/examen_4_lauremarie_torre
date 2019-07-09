@@ -64,10 +64,10 @@ class Association extends Db {
         if (count($element) > 0) $element = $element[0];
         else return;
 
-        $association = new Bibliotheque;
-        $association->setId($_POST['id']);
-        $association->setIdVehicule($_POST['id_vehicule']);
-        $association->setIdConducteur($_POST['id_conducteur']);
+        $association = new Association;
+        $association->setId($element['id']);
+        $association->setIdVehicule($element['id_vehicule']);
+        $association->setIdConducteur($element['id_conducteur']);
 
         return $association;
     }
